@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <magestat_cookienotice>
+            <general>
+                <enabled>1</enabled>
+                <message>This website requires cookies to provide all of its features. By using our website, you agree to our use of cookies</message>
+                <learn_message>Learn more</learn_message>
+                <learn_link>/privacy-policy-cookie-restriction-mode</learn_link>
+                <hide_message>Hide this message</hide_message>
+                <link_separator> - </link_separator>
+                <custom_css></custom_css>
+            </general>
+        </magestat_cookienotice>
+    </default>
+</config>

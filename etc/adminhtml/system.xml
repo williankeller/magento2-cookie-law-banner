@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+* A Magento 2 module named Magestat/CookieNotice
+* Copyright (C) 2018 Magestat
+*
+* This file included in Magestat/CookieNotice is licensed under OSL 3.0
+*
+* http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+* Please see LICENSE.txt for the full text of the OSL 3.0 license
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+    <system>
+        <tab id="magestat" translate="label" sortOrder="900">
+            <label>Magestat</label>
+        </tab>
+        <section id="magestat_cookienotice" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>magestat</tab>
+            <label>Cookie Notice</label>
+            <resource>Magestat_CookieNotice::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="message" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Banner Message</label>
+                </field>
+                <field id="learn_message" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>More Information Link Text</label>
+                </field>
+                <field id="learn_link" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>More Information Link URL</label>
+                    <comment>The URL where the user will find more information regarding cookie usage. e.g: http://www.mymagentostore.com/privacy-policy</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
