@@ -10,7 +10,7 @@
 * Please see LICENSE.txt for the full text of the OSL 3.0 license
 */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="magestat" translate="label" sortOrder="900">
             <label>Magestat</label>
@@ -20,15 +20,20 @@
             <label>Cookie Notice</label>
             <resource>Magestat_CookieNotice::config</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                <field id="message" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Banner Message</label>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
                 </field>
-                <field id="learn_message" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="message" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message</label>
+                </field>
+                <field id="learn_message" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>More Information Link Text</label>
                 </field>
-                <field id="learn_link" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="learn_link" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>More Information Link URL</label>
-                    <comment>The URL where the user will find more information regarding cookie usage. e.g: http://www.mymagentostore.com/privacy-policy</comment>
+                </field>
+                <field id="accept_button" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Accept Button Text</label>
                 </field>
             </group>
         </section>
