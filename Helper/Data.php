@@ -12,8 +12,86 @@
 
 namespace Magestat\CookieNotice\Helper;
 
-class Data extends \Magento\Framework\App\Helper\AbstractHelper
+use Magento\Framework\App\Helper\AbstractHelper;
+
+class Data extends AbstractHelper
 {
+
+    /**
+     * Used to get title setting.
+     */
+    const PATH_TITLE = 'magestat_cookienotice/general/title';
+
+    /**
+     * Used to get banner message setting.
+     */
+    const PATH_MESSAGE = 'magestat_cookienotice/general/message';
+
+    /**
+     * Used to get more info message setting.
+     */
+    const PATH_INFO_MESSAGE = 'magestat_cookienotice/general/info_message';
+
+    /**
+     * Used to get more info link setting.
+     */
+    const PATH_INFO_LINK = 'magestat_cookienotice/general/info_link';
+
+    /**
+     * Used to get button title setting.
+     */
+    const PATH_BUTTON = 'magestat_cookienotice/general/accept_button';
+
+    /**
+     * Retrieve banner title.
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->getConfigValue(self::PATH_TITLE);
+    }
+
+    /**
+     * Retrieve banner message content.
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->getConfigValue(self::PATH_MESSAGE);
+    }
+
+    /**
+     * Retrieve banner more info text.
+     *
+     * @return string
+     */
+    public function getInfoMessage()
+    {
+        return $this->getConfigValue(self::PATH_INFO_MESSAGE);
+    }
+
+    /**
+     * Retrieve banner more info link to.
+     *
+     * @return string
+     */
+    public function getInfoLink()
+    {
+        return $this->getConfigValue(self::PATH_INFO_LINK);
+    }
+
+    /**
+     * Retrieve banner accept button text.
+     *
+     * @return string
+     */
+    public function getButton()
+    {
+        return $this->getConfigValue(self::PATH_BUTTON);
+    }
+
     /**
      * @param string $path
      * @return string

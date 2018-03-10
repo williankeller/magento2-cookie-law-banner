@@ -12,8 +12,29 @@
 
 namespace Magestat\CookieNotice\Block;
 
+use Magento\Catalog\Block\Product\Context;
+use Magestat\CookieNotice\Helper\Data;
+
 class CookieNotice extends \Magento\Framework\View\Element\Template
-{
+{    
+    /**
+     * @var Magestat\CookieNotice\Helper\Data
+     */
+    protected $dataHelper = null;
+
+    /**
+     * @param Context $context
+     * @param Data $helper
+     * @param array $data
+     */
+    public function __construct(
+        Context $context,
+        Data $helper,
+        array $data = []
+    ) {
+        $this->dataHelper = $helper;
+        parent::__construct($context, $data);
+    }
 
     /**
      * {@inheritdoc}
@@ -23,4 +44,53 @@ class CookieNotice extends \Magento\Framework\View\Element\Template
         return parent::_prepareLayout();
     }
 
+    /**
+     * Retrieve banner title.
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->dataHelper->getTitle();
+    }
+
+    /**
+     * Retrieve banner message content.
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->dataHelper->getMessage();
+    }
+
+    /**
+     * Retrieve banner more info text.
+     *
+     * @return string
+     */
+    public function getInfoMessage()
+    {
+        return $this->dataHelper->getInfoMessage();
+    }
+
+    /**
+     * Retrieve banner more info link to.
+     *
+     * @return string
+     */
+    public function getInfoLink()
+    {
+        return $this->dataHelper->getInfoLink();
+    }
+
+    /**
+     * Retrieve banner accept button text.
+     *
+     * @return string
+     */
+    public function getButton()
+    {
+        return $this->dataHelper->getButton();
+    }
 }
