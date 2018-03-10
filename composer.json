@@ -1,8 +1,8 @@
 {
     "name": "magestat/module-cookie-notice",
-    "description": "This extension allows your enable an EU compliant consent cookie notification bar",
+    "description": "This extension allows your enable an EU compliant consent cookie notification banner.",
     "type": "magento2-module",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Magestat",
