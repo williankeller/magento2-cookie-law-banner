@@ -96,7 +96,7 @@ class Data extends AbstractHelper
      * @param string $path
      * @return string
      */
-    public function getConfig($path)
+    public function getConfigValue($path)
     {
         return $this->scopeConfig->getValue(
                 $path, \Magento\Store\Model\ScopeInterface::SCOPE_STORE
