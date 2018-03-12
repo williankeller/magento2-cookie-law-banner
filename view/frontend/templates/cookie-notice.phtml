@@ -12,17 +12,17 @@
  * $block \Magestat\CookieNotice\Block\CookieNotice
  */
 ?>
-<div class="cookie-notice">
+<div class="magestat-cookie-notice">
     <div class="content-inner-container">
         <div class="banner-title">
             <h5><?= $block->getTitle() ?></h5>
         </div>
         <div class="banner-content">
             <p><?= $block->getMessage() ?></p>
-            <p><em><a href="<?= $block->getInfoLink() ?>"><?= $block->getInfoMessage() ?></a></em></p>
+            <p><em><a href="<?= $block->getInfoLink() ?>" class="link"><?= $block->getInfoMessage() ?></a></em></p>
         </div>
         <div class="banner-button">
-            <button class="button-accept"><?= $block->getButton() ?></button>
+            <button class="primary button-accept"><?= $block->getButton() ?></button>
         </div>
     </div>
 </div>
