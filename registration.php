@@ -1,6 +1,6 @@
 <?php
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Magestat_CookieNotice',
+    'Magestat_CookieLawBanner',
     __DIR__
 );

@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!--
 /**
-* A Magento 2 module named Magestat/CookieNotice
+* A Magento 2 module named Magestat/CookieLawBanner
 * Copyright (C) 2018 Magestat
 *
-* This file included in Magestat/CookieNotice is licensed under OSL 3.0
+* This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
 *
 * http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
 * Please see LICENSE.txt for the full text of the OSL 3.0 license
@@ -15,10 +15,10 @@
         <tab id="magestat" translate="label" sortOrder="900">
             <label>Magestat</label>
         </tab>
-        <section id="magestat_cookienotice" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="magestat_cookielawbanner" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <tab>magestat</tab>
             <label>Cookie Notice</label>
-            <resource>Magestat_CookieNotice::config</resource>
+            <resource>Magestat_CookieLawBanner::config</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Title</label>

@@ -1,24 +1,24 @@
 <?php
 
 /**
- * A Magento 2 module named Magestat/CookieNotice
+ * A Magento 2 module named Magestat/CookieLawBanner
  * Copyright (C) 2018 Magestat
  *
- * This file included in Magestat/CookieNotice is licensed under OSL 3.0
+ * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
  *
  * http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
  */
 
-namespace Magestat\CookieNotice\Block;
+namespace Magestat\CookieLawBanner\Block;
 
 use Magento\Catalog\Block\Product\Context;
-use Magestat\CookieNotice\Helper\Data;
+use Magestat\CookieLawBanner\Helper\Data;
 
-class CookieNotice extends \Magento\Framework\View\Element\Template
+class CookieLawBanner extends \Magento\Framework\View\Element\Template
 {    
     /**
-     * @var Magestat\CookieNotice\Helper\Data
+     * @var Magestat\CookieLawBanner\Helper\Data
      */
     protected $dataHelper = null;
 

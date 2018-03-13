@@ -1,5 +1,5 @@
 {
-    "name": "magestat/module-cookie-notice",
+    "name": "magestat/module-cookie-law-banner",
     "description": "This extension allows your enable an EU compliant consent cookie notification banner.",
     "type": "magento2-module",
     "version": "1.0.0",
@@ -21,7 +21,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Magestat\\CookieNotice\\": ""
+            "Magestat\\CookieLawBanner\\": ""
         }
     }
 }

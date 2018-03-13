@@ -1,6 +1,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <magestat_cookienotice>
+        <magestat_cookielawbanner>
             <general>
                 <title>Cookies Control</title>
                 <message>We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.</message>
@@ -8,6 +8,6 @@
                 <learn_link>/privacy-policy-cookie-restriction-mode</learn_link>
                 <accept_button>Accept</accept_button>
             </general>
-        </magestat_cookienotice>
+        </magestat_cookielawbanner>
     </default>
 </config>
