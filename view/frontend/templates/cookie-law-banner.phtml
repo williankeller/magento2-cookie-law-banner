@@ -9,20 +9,33 @@
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
  *
  *
- * $block \Magestat\CookieLawBanner\Block\CookieLawBanner
+ * @var $block \Magestat\CookieLawBanner\Block\CookieLawBanner
  */
 ?>
-<div class="magestat-cookie-law-banner">
+<div id="magestat-cookie-law-banner" data-bind="scope:'magestat-cookie-law-banner'">
     <div class="content-inner-container">
         <div class="banner-title">
-            <h5><?= $block->getTitle() ?></h5>
+            <h3><?= /* @escapeNotVerified */ $block->getTitle() ?></h3>
         </div>
         <div class="banner-content">
-            <p><?= $block->getMessage() ?></p>
-            <p><em><a href="<?= $block->getInfoLink() ?>" class="link"><?= $block->getInfoMessage() ?></a></em></p>
+            <p class="cookie-content"><?= /* @escapeNotVerified */ $block->getMessage() ?></p>
+            <p class="more-info-content">
+                <a class="link" href="<?= /* @escapeNotVerified */ $block->getInfoLink() ?>">
+                    <em><?= /* @escapeNotVerified */ $block->getInfoMessage() ?></em>
+                </a>
+            </p>
         </div>
         <div class="banner-button">
-            <button class="action primary button-accept"><?= $block->getButton() ?></button>
+            <button class="action primary button-accept">
+                <span><?= /* @escapeNotVerified */ $block->getButton() ?></span>
+            </button>
         </div>
     </div>
 </div>
+<script type="text/x-magento-init">
+{
+    "#magestat-cookie-law-banner": {
+        "Magento_Ui/js/core/app": <?= /* @escapeNotVerified */ $block->getJsLayout(); ?>
+    }
+}
+</script>

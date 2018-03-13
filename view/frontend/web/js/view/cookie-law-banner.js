@@ -15,12 +15,30 @@ define([
 
     return Component.extend({
         defaults: {
-            
+            context: '#magestat-cookie-law-banner',
+            button: '.button-accept'
         },
 
         /** @inheritdoc */
         initialize: function () {
             this._super();
+
+            this.buttonClick();
+        },
+
+        /**
+         * Trigger button click action.
+         *
+         * @returns {magestat-cookie-law-banner}
+         */
+        buttonClick: function () {
+            var self = this;
+
+            $(self.context).on('click', self.button, function () {
+                $(this).closest(self.context).addClass('remove');
+            });
+
+            return this;
         }
     });
 });

@@ -11,12 +11,19 @@
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <css src="Magestat_CookieLawBanner::css/magestat_cookielawbanner.css"/>
-    </head>
     <body>
-        <referenceContainer name="after.body.start">
-            <block class="Magestat\CookieLawBanner\Block\CookieLawBanner" name="magestat_cookielawbanner" template="Magestat_CookieLawBanner::cookie-law-banner.phtml"/>
-        </referenceContainer>
+        <referenceBlock name="content">
+            <block class="Magestat\CookieLawBanner\Block\CookieLawBanner" name="magestat.cookie.law.banner" template="Magestat_CookieLawBanner::cookie-law-banner.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="magestat-cookie-law-banner" xsi:type="array">
+                                <item name="component" xsi:type="string">Magestat_CookieLawBanner/js/view/cookie-law-banner</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
     </body>
 </page>
