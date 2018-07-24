@@ -2,7 +2,7 @@
 <!--
 /**
 * A Magento 2 module named Magestat/CookieLawBanner
-* Copyright (C) 2018 Magestat
+* Copyright (C) 2018 Magestat (http://magestat.com)
 *
 * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
 *
@@ -15,24 +15,32 @@
         <tab id="magestat" translate="label" sortOrder="900">
             <label>Magestat</label>
         </tab>
-        <section id="magestat_cookielawbanner" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="magestat_cookielawbanner" showInDefault="1">
             <tab>magestat</tab>
             <label>Cookie Law Banner</label>
             <resource>Magestat_CookieLawBanner::config</resource>
-            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="module" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>Enable Module</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="general" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20" translate="label">
+                <label>Settings</label>
+                <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Title</label>
                 </field>
-                <field id="message" translate="label" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Message</label>
+                <field id="message" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>description</label>
                 </field>
-                <field id="info_message" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="text" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>More Information Link Text</label>
                 </field>
-                <field id="info_link" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="link" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>More Information Link URL</label>
                 </field>
-                <field id="accept_button" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="button" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Accept Button Text</label>
                 </field>
             </group>

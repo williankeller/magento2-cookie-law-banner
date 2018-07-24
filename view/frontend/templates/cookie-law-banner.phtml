@@ -1,17 +1,17 @@
 <?php
 /**
  * A Magento 2 module named Magestat/CookieLawBanner
- * Copyright (C) 2018 Magestat
+ * Copyright (C) 2018 Magestat (http://magestat.com)
  *
  * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
  *
  * http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
  *
- *
  * @var $block \Magestat\CookieLawBanner\Block\CookieLawBanner
  */
 ?>
+<?php if ($block->getIsEnabled()): ?>
 <div id="magestat-cookie-law-banner" data-bind="scope:'magestat-cookie-law-banner'">
     <div class="content-inner-container">
         <div class="banner-title">
@@ -39,3 +39,4 @@
     }
 }
 </script>
+<?php endif; ?>

@@ -1,6 +1,14 @@
 {
     "name": "magestat/module-cookie-law-banner",
     "description": "This extension allows your enable an EU compliant consent cookie notification banner.",
+    "keywords": [
+        "magento 2",
+        "cookie law banner",
+        "cookie message",
+        "magento 2 extension",
+        "magento 2 module",
+        "magento 2 cookie"
+    ],
     "type": "magento2-module",
     "version": "1.0.0",
     "authors": [
@@ -10,11 +18,17 @@
             "homepage": "http://www.magestat.com"
         }
     ],
+    "support": {
+        "email": "support@magestat.com",
+        "issues": "https://github.com/magestat/magento2-cookie-law-banner/issues/"
+    },
     "license": [
         "OSL-3.0"
     ],
     "require": {
-        "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0"
+        "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0",
+        "magento/module-backend": "100.0.*|100.1.*|100.2.*",
+        "magento/framework": "100.0.*|100.1.*|101.0.*"
     },
     "autoload": {
         "files": [

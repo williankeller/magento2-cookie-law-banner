@@ -1,6 +1,6 @@
 /**
  * A Magento 2 module named Magestat/CookieLawBanner
- * Copyright (C) 2018 Magestat
+ * Copyright (C) 2018 Magestat (http://magestat.com)
  *
  * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
  *
@@ -37,8 +37,7 @@ define([
             $(self.context).on('click', self.button, function () {
                 $(this).closest(self.context).addClass('remove');
             });
-
-            return this;
+            return self;
         }
     });
 });

@@ -2,7 +2,7 @@
 
 /**
  * A Magento 2 module named Magestat/CookieLawBanner
- * Copyright (C) 2018 Magestat
+ * Copyright (C) 2018 Magestat (http://magestat.com)
  *
  * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
  *
@@ -18,9 +18,9 @@ use Magestat\CookieLawBanner\Helper\Data;
 class CookieLawBanner extends \Magento\Framework\View\Element\Template
 {    
     /**
-     * @var Magestat\CookieLawBanner\Helper\Data
+     * @var \Magestat\CookieLawBanner\Helper\Data
      */
-    protected $dataHelper = null;
+    protected $helperData;
 
     /**
      * @param Context $context
@@ -32,8 +32,8 @@ class CookieLawBanner extends \Magento\Framework\View\Element\Template
         Data $helper,
         array $data = []
     ) {
-        $this->dataHelper = $helper;
         parent::__construct($context, $data);
+        $this->helperData = $helper;
     }
 
     /**
@@ -45,13 +45,23 @@ class CookieLawBanner extends \Magento\Framework\View\Element\Template
     }
 
     /**
+     * Get if module is enabled.
+     *
+     * @return bool
+     */
+    public function getIsEnabled()
+    {
+        return $this->helperData->isActive();
+    }
+
+    /**
      * Retrieve banner title.
      *
      * @return string
      */
     public function getTitle()
     {
-        return $this->dataHelper->getTitle();
+        return $this->helperData->getTitle();
     }
 
     /**
@@ -61,7 +71,7 @@ class CookieLawBanner extends \Magento\Framework\View\Element\Template
      */
     public function getMessage()
     {
-        return $this->dataHelper->getMessage();
+        return $this->helperData->getMessage();
     }
 
     /**
@@ -71,7 +81,7 @@ class CookieLawBanner extends \Magento\Framework\View\Element\Template
      */
     public function getInfoMessage()
     {
-        return $this->dataHelper->getInfoMessage();
+        return $this->helperData->getInfoMessage();
     }
 
     /**
@@ -81,7 +91,7 @@ class CookieLawBanner extends \Magento\Framework\View\Element\Template
      */
     public function getInfoLink()
     {
-        return $this->dataHelper->getInfoLink();
+        return $this->helperData->getInfoLink();
     }
 
     /**
@@ -91,6 +101,6 @@ class CookieLawBanner extends \Magento\Framework\View\Element\Template
      */
     public function getButton()
     {
-        return $this->dataHelper->getButton();
+        return $this->helperData->getButton();
     }
 }

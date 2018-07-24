@@ -2,7 +2,7 @@
 
 /**
  * A Magento 2 module named Magestat/CookieLawBanner
- * Copyright (C) 2018 Magestat
+ * Copyright (C) 2018 Magestat (http://magestat.com)
  *
  * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
  *
@@ -12,35 +12,19 @@
 
 namespace Magestat\CookieLawBanner\Helper;
 
-use Magento\Framework\App\Helper\AbstractHelper;
-
-class Data extends AbstractHelper
+class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
-
     /**
-     * Used to get title setting.
+     * Check if module is active.
+     *
+     * @return bool
      */
-    const PATH_TITLE = 'magestat_cookielawbanner/general/title';
-
-    /**
-     * Used to get banner message setting.
-     */
-    const PATH_MESSAGE = 'magestat_cookielawbanner/general/message';
-
-    /**
-     * Used to get more info message setting.
-     */
-    const PATH_INFO_MESSAGE = 'magestat_cookielawbanner/general/info_message';
-
-    /**
-     * Used to get more info link setting.
-     */
-    const PATH_INFO_LINK = 'magestat_cookielawbanner/general/info_link';
-
-    /**
-     * Used to get button title setting.
-     */
-    const PATH_BUTTON = 'magestat_cookielawbanner/general/accept_button';
+    public function isActive()
+    {
+        return (bool) $this->getConfigValue(
+            'magestat_cookielawbanner/module/enabled'
+        );
+    }
 
     /**
      * Retrieve banner title.
@@ -49,7 +33,9 @@ class Data extends AbstractHelper
      */
     public function getTitle()
     {
-        return $this->getConfigValue(self::PATH_TITLE);
+        return $this->getConfigValue(
+            'magestat_cookielawbanner/general/title'
+        );
     }
 
     /**
@@ -59,7 +45,9 @@ class Data extends AbstractHelper
      */
     public function getMessage()
     {
-        return $this->getConfigValue(self::PATH_MESSAGE);
+        return $this->getConfigValue(
+            'magestat_cookielawbanner/general/description'
+        );
     }
 
     /**
@@ -69,7 +57,9 @@ class Data extends AbstractHelper
      */
     public function getInfoMessage()
     {
-        return $this->getConfigValue(self::PATH_INFO_MESSAGE);
+        return $this->getConfigValue(
+            'magestat_cookielawbanner/general/text'
+        );
     }
 
     /**
@@ -79,7 +69,9 @@ class Data extends AbstractHelper
      */
     public function getInfoLink()
     {
-        return $this->getConfigValue(self::PATH_INFO_LINK);
+        return $this->getConfigValue(
+            'magestat_cookielawbanner/general/link'
+        );
     }
 
     /**
@@ -89,7 +81,9 @@ class Data extends AbstractHelper
      */
     public function getButton()
     {
-        return $this->getConfigValue(self::PATH_BUTTON);
+        return $this->getConfigValue(
+            'magestat_cookielawbanner/general/button'
+        );
     }
 
     /**
@@ -99,8 +93,7 @@ class Data extends AbstractHelper
     public function getConfigValue($path)
     {
         return $this->scopeConfig->getValue(
-                $path, \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+            $path, \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
-
 }
