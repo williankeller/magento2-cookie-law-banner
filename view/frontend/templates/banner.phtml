@@ -8,22 +8,36 @@
  * http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
  *
- * @var $block \Magestat\CookieLawBanner\Block\CookieLawBanner
+ * @var $block \Magestat\CookieLawBanner\Block\Banner
  */
+?>
+<?php
+// Instanciate block title.
+$title = $block->getTitle();
+
+// Instanciate block link.
+$link = $block->getInfoLink();
+
+// Instanciate block info message.
+$info = $block->getInfoMessage();
 ?>
 <?php if ($block->getIsEnabled()): ?>
 <div id="magestat-cookie-law-banner" data-bind="scope:'magestat-cookie-law-banner'">
     <div class="content-inner-container">
-        <div class="banner-title">
-            <h3><?= /* @escapeNotVerified */ $block->getTitle() ?></h3>
-        </div>
+        <?php if ($title): ?>
+            <div class="banner-title">
+                <h3><?= /* @escapeNotVerified */ $title ?></h3>
+            </div>
+        <?php endif; ?>
         <div class="banner-content">
             <p class="cookie-content"><?= /* @escapeNotVerified */ $block->getMessage() ?></p>
+            <?php if ($link && $info): ?>
             <p class="more-info-content">
-                <a class="link" href="<?= /* @escapeNotVerified */ $block->getInfoLink() ?>">
-                    <em><?= /* @escapeNotVerified */ $block->getInfoMessage() ?></em>
+                <a class="link" href="<?= /* @escapeNotVerified */ $link ?>">
+                    <em><?= /* @escapeNotVerified */ $info ?></em>
                 </a>
             </p>
+            <?php endif; ?>
         </div>
         <div class="banner-button">
             <button class="action primary button-accept">

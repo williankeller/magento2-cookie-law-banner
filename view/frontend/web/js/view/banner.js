@@ -36,10 +36,11 @@ define([
             var self = this;
 
             $(self.context).on('click', self.button, function () {
-                $(this).closest(self.context).addClass('remove');
+                // Add class to hide container.
+                $(this).closest(self.context).fadeOut(300);
+                // Set cookie as accepted.
+                $.cookie(self.cookieName, true);
             });
-            $.cookie(self.cookieName, 'accepted');
-            
             return self;
         }
     });

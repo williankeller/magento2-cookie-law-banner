@@ -1,3 +1,4 @@
+
 /**
  * A Magento 2 module named Magestat/CookieLawBanner
  * Copyright (C) 2018 Magestat (http://magestat.com)
@@ -8,39 +9,58 @@
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
  */
 
-#magestat-cookie-law-banner {
-    background: #fff;
-    bottom: 50px;
-    box-shadow: -2px 2px 82px -26px rgba(0, 0, 0, .5);
-    left: 30px;
-    max-width: 400px;
-    overflow: hidden;
-    position: fixed;
-    text-align: center;
-    z-index: 48;
-    .content-inner-container {
-        padding: 20px;
-    }
-    .banner-title {
-        h3 {
-            margin: 20px 0;
-            text-transform: uppercase;
+//
+//  Common (Both desktop and mobile)
+//  _____________________________________________
+
+& when (@media-common = true) {
+    #magestat-cookie-law-banner {
+        background: #fff;
+        bottom: 50px;
+        box-shadow: -2px 2px 82px -26px rgba(0, 0, 0, .5);
+        left: 30px;
+        max-width: 400px;
+        overflow: hidden;
+        position: fixed;
+        text-align: center;
+        z-index: 48;
+        .content-inner-container {
+            padding: 20px;
+        }
+        .banner-title {
+            h3 {
+                margin: 20px 0;
+                text-transform: uppercase;
+            }
+        }
+        .banner-content {
+            p {
+                margin: 5px 0;
+                padding: 0 15px;
+            }
+            .link {
+                text-decoration: underline;
+            }
+        }
+        .banner-button {
+            margin: 20px 10px 5px;
+            .button-accept {
+                padding: 10px 25px;
+                text-transform: uppercase;
+            }
         }
     }
-    .banner-content {
-        p {
-            margin: 5px 0;
-            padding: 0 15px;
-        }
-        .link {
-            text-decoration: underline;
-        }
-    }
-    .banner-button {
-        margin: 20px 10px 5px;
-        .button-accept {
-            padding: 10px 25px;
-            text-transform: uppercase;
-        }
+}
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    #magestat-cookie-law-banner {
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
     }
 }

@@ -60,8 +60,10 @@ class Banner extends \Magento\Framework\View\Element\Template
      */
     public function getIsEnabled()
     {
-        if ($this->helperData->isActive() && !$this->cookieHandler->exists())
-        {
+        if (
+            $this->helperData->isActive() &&
+            $this->cookieHandler->exists() === false
+        ) {
             return true;
         }
         return false;
@@ -74,7 +76,11 @@ class Banner extends \Magento\Framework\View\Element\Template
      */
     public function getTitle()
     {
-        return $this->helperData->getTitle();
+        $title = $this->helperData->getTitle();
+        if (empty($title)) {
+            return false;
+        }
+        return $title;
     }
 
     /**
@@ -94,7 +100,11 @@ class Banner extends \Magento\Framework\View\Element\Template
      */
     public function getInfoMessage()
     {
-        return $this->helperData->getInfoMessage();
+        $info = $this->helperData->getInfoMessage();
+        if (empty($info)) {
+            return false;
+        }
+        return $info;
     }
 
     /**
@@ -104,7 +114,11 @@ class Banner extends \Magento\Framework\View\Element\Template
      */
     public function getInfoLink()
     {
-        return $this->helperData->getInfoLink();
+        $link = $this->helperData->getInfoLink();
+        if (empty($link)) {
+            return false;
+        }
+        return $link;
     }
 
     /**

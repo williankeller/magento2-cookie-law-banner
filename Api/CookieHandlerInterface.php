@@ -15,11 +15,6 @@ namespace Magestat\CookieLawBanner\Api;
 interface CookieHandlerInterface
 {
     /**
-     * @var string Cookie name.
-     */
-    const COOKIE_NAME = 'm_cookie-law-banner';
-
-    /**
      * Check if cookie exists.
      *
      * @return boolean

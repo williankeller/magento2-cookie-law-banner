@@ -18,6 +18,11 @@ use Magestat\CookieLawBanner\Api\CookieHandlerInterface;
 class CookieHandler implements CookieHandlerInterface
 {
     /**
+     * @var string Cookie name.
+     */
+    const COOKIE_NAME = 'm_cookie-law-banner';
+
+    /**
      * @var \Magento\Framework\Stdlib\CookieManagerInterface
      */
     protected $cookieManager;
@@ -36,9 +41,6 @@ class CookieHandler implements CookieHandlerInterface
      */
     public function exists()
     {
-        if (empty($this->cookieManager->getCookie(self::COOKIE_NAME))) {
-            return false;
-        }
-        return true;
+        return $this->cookieManager->getCookie(self::COOKIE_NAME, false);
     }
 }

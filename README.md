@@ -1,12 +1,10 @@
 Cookie Law Banner for Magento 2
 =====================
 
-A simple way that allows the integration of a Floating Buy Button in your store;
-No matter how much content it has, like, long product description or a lot of 
-reviews, the button follow your customers along each product page. Bringing the 
-product name, price and of course, the buy button.
-Get your customer attention the most important action in your online store, the 
-purchase.
+This extension allow you to setup a Cookie Law Banner to inform your customers 
+about the Cookie Privacy. This extension is also fully customizable, you're 
+able to change the title, description, link and button text. Also compatible 
+mobile version.
 
 [![Packagist](https://img.shields.io/packagist/v/magestat/module-cookie-law-banner.svg)](https://packagist.org/packages/magestat/module-cookie-law-banner)
 
@@ -43,7 +41,7 @@ php bin/magento cache:clean
 
 1. Go to **Stores** > **Configuration** > **Magestat** > **Cookie Law Banner**:
 2. In **Enable Module** tab, select **Enabled** option to enable module.
-3. In **Settings** tab, Fill the fields as you need.
+3. In **Settings** tab, Fill the fields as you want.
 
 ## Contribution
 
