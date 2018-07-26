@@ -46,7 +46,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getMessage()
     {
         return $this->getConfigValue(
-            'magestat_cookielawbanner/general/description'
+            'magestat_cookielawbanner/general/message'
         );
     }
 
@@ -58,7 +58,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getInfoMessage()
     {
         return $this->getConfigValue(
-            'magestat_cookielawbanner/general/text'
+            'magestat_cookielawbanner/general/details'
         );
     }
 

@@ -8,13 +8,15 @@
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
  */
 define([
+    'uiComponent',
     'jquery',
-    'uiComponent'
-], function ($, Component) {
+    'jquery/jquery.cookie'
+], function (Component, $) {
     'use strict';
 
     return Component.extend({
         defaults: {
+            cookieName: 'm_cookie-law-banner',
             context: '#magestat-cookie-law-banner',
             button: '.button-accept'
         },
@@ -22,14 +24,13 @@ define([
         /** @inheritdoc */
         initialize: function () {
             this._super();
-
             this.buttonClick();
         },
 
         /**
          * Trigger button click action.
          *
-         * @returns {magestat-cookie-law-banner}
+         * @returns {banner}
          */
         buttonClick: function () {
             var self = this;
@@ -37,6 +38,8 @@ define([
             $(self.context).on('click', self.button, function () {
                 $(this).closest(self.context).addClass('remove');
             });
+            $.cookie(self.cookieName, 'accepted');
+            
             return self;
         }
     });

@@ -32,13 +32,13 @@
                     <label>Title</label>
                 </field>
                 <field id="message" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>description</label>
+                    <label>Small Cookies Description</label>
                 </field>
-                <field id="text" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>More Information Link Text</label>
+                <field id="details" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>More Details Text</label>
                 </field>
                 <field id="link" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>More Information Link URL</label>
+                    <label>More Details Link of Text</label>
                 </field>
                 <field id="button" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Accept Button Text</label>

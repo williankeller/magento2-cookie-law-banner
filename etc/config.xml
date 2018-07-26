@@ -16,9 +16,9 @@
             <general>
                 <title>Cookies Control</title>
                 <message>We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.</message>
-                <info_message>More info</info_message>
-                <info_link>/privacy-policy-cookie-restriction-mode</info_link>
-                <accept_button>Accept</accept_button>
+                <text>More info</text>
+                <link>/privacy-policy-cookie-restriction-mode</link>
+                <button>Accept</button>
             </general>
         </magestat_cookielawbanner>
     </default>

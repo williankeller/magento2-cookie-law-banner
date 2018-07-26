@@ -14,8 +14,9 @@ namespace Magestat\CookieLawBanner\Block;
 
 use Magento\Catalog\Block\Product\Context;
 use Magestat\CookieLawBanner\Helper\Data;
+use Magestat\CookieLawBanner\Api\CookieHandlerInterface;
 
-class CookieLawBanner extends \Magento\Framework\View\Element\Template
+class Banner extends \Magento\Framework\View\Element\Template
 {    
     /**
      * @var \Magestat\CookieLawBanner\Helper\Data
@@ -23,17 +24,25 @@ class CookieLawBanner extends \Magento\Framework\View\Element\Template
     protected $helperData;
 
     /**
+     * @var \Magestat\CookieLawBanner\Api\CookieHandlerInterface
+     */
+    protected $cookieHandler;
+
+    /**
      * @param Context $context
      * @param Data $helper
+     * @param CookieHandlerInterface $cookieHandler
      * @param array $data
      */
     public function __construct(
         Context $context,
         Data $helper,
+        CookieHandlerInterface $cookieHandler,
         array $data = []
     ) {
         parent::__construct($context, $data);
         $this->helperData = $helper;
+        $this->cookieHandler = $cookieHandler;
     }
 
     /**
@@ -51,7 +60,11 @@ class CookieLawBanner extends \Magento\Framework\View\Element\Template
      */
     public function getIsEnabled()
     {
-        return $this->helperData->isActive();
+        if ($this->helperData->isActive() && !$this->cookieHandler->exists())
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -101,6 +114,10 @@ class CookieLawBanner extends \Magento\Framework\View\Element\Template
      */
     public function getButton()
     {
-        return $this->helperData->getButton();
+        $button = $this->helperData->getButton();
+        if (empty($button)) {
+            return __('Accept');
+        }
+        return $button;
     }
 }

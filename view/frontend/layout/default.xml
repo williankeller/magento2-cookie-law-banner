@@ -13,12 +13,12 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="content">
-            <block class="Magestat\CookieLawBanner\Block\CookieLawBanner" name="magestat.cookie.law.banner" template="Magestat_CookieLawBanner::cookie-law-banner.phtml">
+            <block class="Magestat\CookieLawBanner\Block\Banner" name="magestat.cookie.law.banner" template="Magestat_CookieLawBanner::banner.phtml">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
                         <item name="components" xsi:type="array">
                             <item name="magestat-cookie-law-banner" xsi:type="array">
-                                <item name="component" xsi:type="string">Magestat_CookieLawBanner/js/view/cookie-law-banner</item>
+                                <item name="component" xsi:type="string">Magestat_CookieLawBanner/js/view/banner</item>
                             </item>
                         </item>
                     </argument>
