@@ -6,7 +6,7 @@ about the Cookie Privacy. This extension is also fully customizable, you're
 able to change the title, description, link and button text. Also compatible 
 mobile version.
 
-[![Packagist](https://img.shields.io/packagist/v/magestat/module-cookie-law-banner.svg)](https://packagist.org/packages/magestat/module-cookie-law-banner)
+[![Build Status](https://travis-ci.org/magestat/magento2-cookie-law-banner.svg?branch=v1.0.0)](https://travis-ci.org/magestat/magento2-cookie-law-banner) [![Packagist](https://img.shields.io/packagist/v/magestat/module-cookie-law-banner.svg)](https://packagist.org/packages/magestat/module-cookie-law-banner)
 
 ## 1. Installation
 
