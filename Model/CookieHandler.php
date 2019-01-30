@@ -2,7 +2,7 @@
 
 /**
  * A Magento 2 module named Magestat/CookieLawBanner
- * Copyright (C) 2018 Magestat (http://magestat.com)
+ * Copyright (C) 2018 Magestat
  *
  * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
  *
@@ -15,6 +15,9 @@ namespace Magestat\CookieLawBanner\Model;
 use Magento\Framework\Stdlib\CookieManagerInterface;
 use Magestat\CookieLawBanner\Api\CookieHandlerInterface;
 
+/**
+ * @package \Magestat\CookieLawBanner\Model
+ */
 class CookieHandler implements CookieHandlerInterface
 {
     /**
@@ -25,7 +28,7 @@ class CookieHandler implements CookieHandlerInterface
     /**
      * @var \Magento\Framework\Stdlib\CookieManagerInterface
      */
-    protected $cookieManager;
+    private $cookieManager;
 
     /**
      * @param CookieManagerInterface $cookieManager

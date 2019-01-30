@@ -2,7 +2,7 @@
 
 /**
  * A Magento 2 module named Magestat/CookieLawBanner
- * Copyright (C) 2018 Magestat (http://magestat.com)
+ * Copyright (C) 2018 Magestat
  *
  * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
  *
@@ -12,6 +12,9 @@
 
 namespace Magestat\CookieLawBanner\Helper;
 
+/**
+ * @package \Magestat\CookieLawBanner\Helper
+ */
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
     /**
@@ -93,7 +96,8 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getConfigValue($path)
     {
         return $this->scopeConfig->getValue(
-            $path, \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+            $path,
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
 }

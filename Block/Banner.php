@@ -2,7 +2,7 @@
 
 /**
  * A Magento 2 module named Magestat/CookieLawBanner
- * Copyright (C) 2018 Magestat (http://magestat.com)
+ * Copyright (C) 2018 Magestat
  *
  * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
  *
@@ -16,17 +16,20 @@ use Magento\Catalog\Block\Product\Context;
 use Magestat\CookieLawBanner\Helper\Data;
 use Magestat\CookieLawBanner\Api\CookieHandlerInterface;
 
+/**
+ * @package \Magestat\CookieLawBanner\Block
+ */
 class Banner extends \Magento\Framework\View\Element\Template
-{    
+{
     /**
      * @var \Magestat\CookieLawBanner\Helper\Data
      */
-    protected $helperData;
+    private $helperData;
 
     /**
      * @var \Magestat\CookieLawBanner\Api\CookieHandlerInterface
      */
-    protected $cookieHandler;
+    private $cookieHandler;
 
     /**
      * @param Context $context
@@ -46,24 +49,13 @@ class Banner extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function _prepareLayout()
-    {
-        return parent::_prepareLayout();
-    }
-
-    /**
      * Get if module is enabled.
      *
      * @return bool
      */
     public function getIsEnabled()
     {
-        if (
-            $this->helperData->isActive() &&
-            $this->cookieHandler->exists() === false
-        ) {
+        if ($this->helperData->isActive() && !$this->cookieHandler->exists()) {
             return true;
         }
         return false;

@@ -2,7 +2,7 @@
 <!--
 /**
  * A Magento 2 module named Magestat/CookieLawBanner
- * Copyright (C) 2018 Magestat (http://magestat.com)
+ * Copyright (C) 2018 Magestat
  *
  * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
  *
@@ -13,7 +13,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="content">
-            <block class="Magestat\CookieLawBanner\Block\Banner" name="magestat.cookie.law.banner" template="Magestat_CookieLawBanner::banner.phtml">
+            <block class="Magestat\CookieLawBanner\Block\Banner" name="magestat.cookie.law.banner" template="Magestat_CookieLawBanner::banner.phtml" cacheable="false">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
                         <item name="components" xsi:type="array">

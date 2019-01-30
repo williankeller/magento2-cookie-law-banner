@@ -1,47 +1,39 @@
 <?php
+
 /**
  * A Magento 2 module named Magestat/CookieLawBanner
- * Copyright (C) 2018 Magestat (http://magestat.com)
+ * Copyright (C) 2018 Magestat.
  *
  * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
  *
  * http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
  *
- * @var $block \Magestat\CookieLawBanner\Block\Banner
+ * @var \Magestat\CookieLawBanner\Block\Banner $block
  */
-?>
-<?php
-// Instanciate block title.
-$title = $block->getTitle();
 
-// Instanciate block link.
-$link = $block->getInfoLink();
-
-// Instanciate block info message.
-$info = $block->getInfoMessage();
 ?>
-<?php if ($block->getIsEnabled()): ?>
+<?php if ($block->getIsEnabled()) : ?>
 <div id="magestat-cookie-law-banner" data-bind="scope:'magestat-cookie-law-banner'">
     <div class="content-inner-container">
-        <?php if ($title): ?>
+        <?php if ($block->getTitle()) : ?>
             <div class="banner-title">
-                <h3><?= /* @escapeNotVerified */ $title ?></h3>
+                <h3><?= $block->escapeHtml($block->getTitle()) ?></h3>
             </div>
         <?php endif; ?>
         <div class="banner-content">
-            <p class="cookie-content"><?= /* @escapeNotVerified */ $block->getMessage() ?></p>
-            <?php if ($link && $info): ?>
+            <p class="cookie-content"><?= $block->escapeHtml($block->getMessage()) ?></p>
+            <?php if ($block->getInfoLink() && $block->getInfoMessage()) : ?>
             <p class="more-info-content">
-                <a class="link" href="<?= /* @escapeNotVerified */ $link ?>">
-                    <em><?= /* @escapeNotVerified */ $info ?></em>
+                <a class="link" href="<?= $block->escapeHtml($block->getInfoLink()) ?>">
+                    <em><?= $block->escapeHtml($block->getInfoMessage()) ?></em>
                 </a>
             </p>
             <?php endif; ?>
         </div>
         <div class="banner-button">
             <button class="action primary button-accept">
-                <span><?= /* @escapeNotVerified */ $block->getButton() ?></span>
+                <span><?= $block->escapeHtml($block->getButton()) ?></span>
             </button>
         </div>
     </div>
@@ -49,7 +41,7 @@ $info = $block->getInfoMessage();
 <script type="text/x-magento-init">
 {
     "#magestat-cookie-law-banner": {
-        "Magento_Ui/js/core/app": <?= /* @escapeNotVerified */ $block->getJsLayout(); ?>
+        "Magento_Ui/js/core/app": <?= /* @escapeNotVerified */ $block->getJsLayout() ?>
     }
 }
 </script>
