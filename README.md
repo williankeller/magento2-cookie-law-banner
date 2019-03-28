@@ -1,10 +1,7 @@
 Cookie Law Banner for Magento 2
 =====================
 
-This extension allow you to setup a Cookie Law Banner to inform your customers 
-about the Cookie Privacy. This extension is also fully customizable, you're 
-able to change the title, description, link and button text. Also compatible 
-mobile version.
+This extension allow you to setup a Cookie Law Banner to inform your customers about the Cookie Privacy. This extension is also fully customizable, you're able to change the title, description, link and button text. Also compatible mobile version.
 
 [![Build Status](https://travis-ci.org/magestat/magento2-cookie-law-banner.svg?branch=develop)](https://travis-ci.org/magestat/magento2-cookie-law-banner) [![Packagist](https://img.shields.io/packagist/v/magestat/module-cookie-law-banner.svg)](https://packagist.org/packages/magestat/module-cookie-law-banner) [![Downloads](https://img.shields.io/packagist/dt/magestat/module-cookie-law-banner.svg)](https://packagist.org/packages/magestat/module-cookie-law-banner)
 
@@ -51,6 +48,6 @@ Want to contribute to this extension? The quickest way is to open a [pull reques
 
 If you encounter any problems or bugs, please open an issue on [GitHub](https://github.com/magestat/magento2-cookie-law-banner/issues).
 
-Need help setting up or want to customize this extension to meet your business needs? Please email willianlkeller@outlook.com and if we like your idea we will add this feature for free or at a discounted rate.
+Need help setting up or want to customize this extension to meet your business needs? Please open an issue and if we like your idea we will add this feature for free or at a discounted rate.
 
 © Magestat.
