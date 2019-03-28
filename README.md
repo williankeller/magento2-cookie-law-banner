@@ -1,5 +1,4 @@
-Cookie Law Banner for Magento 2
-=====================
+# Cookie Law Banner for Magento 2
 
 This extension allow you to setup a Cookie Law Banner to inform your customers about the Cookie Privacy. This extension is also fully customizable, you're able to change the title, description, link and button text. Also compatible mobile version.
 
