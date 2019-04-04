@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+### [1.0.3](https://github.com/magestat/magento2-cookie-law-banner/releases/tag/1.0.3) - 2019-04-04
+#### Improved
+- Add compatibility with PHP 7.2
+
+
+### [1.0.2](https://github.com/magestat/magento2-cookie-law-banner/releases/tag/1.0.2) - 2019-04-01
+#### Improved
+- - Add compatibility with Magento 2.3.*
+
+
 ### [1.0.1](https://github.com/magestat/magento2-cookie-law-banner/releases/tag/1.0.1) - 2019-01-30
 #### Improved
 - Code structure
