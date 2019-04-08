@@ -11,12 +11,6 @@
     ],
     "type": "magento2-module",
     "version": "1.0.3",
-    "authors": [
-        {
-            "name": "Willian Keller",
-            "email": "willianlkeller@outlook.com"
-        }
-    ],
     "support": {
         "issues": "https://github.com/magestat/magento2-cookie-law-banner/issues/"
     },
