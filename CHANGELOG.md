@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+### [1.0.4](https://github.com/magestat/magento2-cookie-law-banner/releases/tag/1.0.4) - 2019-05-17
+#### Added
+- Possibility to select banner position.
+- Full banner at the top and bottom.
+- Possibility to use Magento default banner style.
+
+#### Improved
+- Methods responses.
+- Get Url action (using default magento method).
+
 ### [1.0.3](https://github.com/magestat/magento2-cookie-law-banner/releases/tag/1.0.3) - 2019-04-04
 #### Improved
 - Add compatibility with PHP 7.2

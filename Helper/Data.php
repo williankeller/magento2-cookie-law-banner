@@ -13,7 +13,8 @@
 namespace Magestat\CookieLawBanner\Helper;
 
 /**
- * @package \Magestat\CookieLawBanner\Helper
+ * Class Data
+ * @package Magestat\CookieLawBanner\Helper
  */
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
@@ -24,79 +25,99 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isActive()
     {
-        return (bool) $this->getConfigValue(
-            'magestat_cookielawbanner/module/enabled'
+        return (bool) $this->scopeConfig->isSetFlag(
+            'magestat_cookielawbanner/module/enabled',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
 
     /**
      * Retrieve banner title.
      *
-     * @return string
+     * @return null|string
      */
     public function getTitle()
     {
-        return $this->getConfigValue(
-            'magestat_cookielawbanner/general/title'
+        return $this->scopeConfig->getValue(
+            'magestat_cookielawbanner/general/title',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
 
     /**
      * Retrieve banner message content.
      *
-     * @return string
+     * @return null|string
      */
     public function getMessage()
     {
-        return $this->getConfigValue(
-            'magestat_cookielawbanner/general/message'
+        return $this->scopeConfig->getValue(
+            'magestat_cookielawbanner/general/message',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
 
     /**
      * Retrieve banner more info text.
      *
-     * @return string
+     * @return null|string
      */
     public function getInfoMessage()
     {
-        return $this->getConfigValue(
-            'magestat_cookielawbanner/general/details'
+        return $this->scopeConfig->getValue(
+            'magestat_cookielawbanner/general/details',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
 
     /**
      * Retrieve banner more info link to.
      *
-     * @return string
+     * @return null|string
      */
     public function getInfoLink()
     {
-        return $this->getConfigValue(
-            'magestat_cookielawbanner/general/link'
+        return $this->scopeConfig->getValue(
+            'magestat_cookielawbanner/general/link',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
 
     /**
      * Retrieve banner accept button text.
      *
-     * @return string
+     * @return null|string
      */
     public function getButton()
     {
-        return $this->getConfigValue(
-            'magestat_cookielawbanner/general/button'
+        return $this->scopeConfig->getValue(
+            'magestat_cookielawbanner/general/button',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
 
     /**
-     * @param string $path
-     * @return string
+     * Retrieve banner accept button text.
+     *
+     * @return null|string
      */
-    public function getConfigValue($path)
+    public function getPosition()
     {
         return $this->scopeConfig->getValue(
-            $path,
+            'magestat_cookielawbanner/layout/position',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Check if module is active.
+     *
+     * @return bool
+     */
+    public function isDefaultStyle()
+    {
+        return (bool) $this->scopeConfig->isSetFlag(
+            'magestat_cookielawbanner/layout/default',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }

@@ -8,28 +8,33 @@
  *
  * http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
- *
- * @var \Magestat\CookieLawBanner\Block\Banner $block
  */
 
+/**
+ * @var \Magestat\CookieLawBanner\Block\Banner $block
+ */
 ?>
 <?php if ($block->getIsEnabled()) : ?>
-<div id="magestat-cookie-law-banner" data-bind="scope:'magestat-cookie-law-banner'">
+<div id="magestat-cookie-law-banner"
+     class="position <?= $block->escapeHtmlAttr($block->getAdditionalStyle()) ?>"
+     data-bind="scope:'magestat-cookie-law-banner'">
     <div class="content-inner-container">
-        <?php if ($block->getTitle()) : ?>
-            <div class="banner-title">
-                <h3><?= $block->escapeHtml($block->getTitle()) ?></h3>
-            </div>
-        <?php endif; ?>
-        <div class="banner-content">
-            <p class="cookie-content"><?= $block->escapeHtml($block->getMessage()) ?></p>
-            <?php if ($block->getInfoLink() && $block->getInfoMessage()) : ?>
-            <p class="more-info-content">
-                <a class="link" href="<?= $block->escapeHtml($block->getInfoLink()) ?>">
-                    <em><?= $block->escapeHtml($block->getInfoMessage()) ?></em>
-                </a>
-            </p>
+        <div class="banner-content-data">
+            <?php if (!empty($block->getTitle())) : ?>
+                <div class="banner-title">
+                    <h3><?= $block->escapeHtml($block->getTitle()) ?></h3>
+                </div>
             <?php endif; ?>
+            <div class="banner-content">
+                <p class="cookie-content"><?= $block->escapeHtml($block->getMessage()) ?></p>
+                <?php if (!empty($block->getInfoLink()) && !empty($block->getInfoMessage())) : ?>
+                <p class="more-info-content">
+                    <a class="link" href="<?= /* @noEscape */ $block->getUrl($block->getInfoLink(), ['_direct' => $block->getInfoLink()]) ?>">
+                        <em><?= $block->escapeHtml($block->getInfoMessage()) ?></em>
+                    </a>
+                </p>
+                <?php endif; ?>
+            </div>
         </div>
         <div class="banner-button">
             <button class="action primary button-accept">
