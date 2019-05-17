@@ -2,7 +2,6 @@
 <!--
 /**
 * A Magento 2 module named Magestat/CookieLawBanner
-* Copyright (C) 2018 Magestat
 *
 * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
 *
@@ -27,21 +26,36 @@
                 </field>
             </group>
             <group id="general" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20" translate="label">
-                <label>Settings</label>
+                <label>Content Management</label>
                 <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Title</label>
                 </field>
                 <field id="message" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Small Cookies Description</label>
+                    <label>Cookies Introduction</label>
                 </field>
                 <field id="details" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>More Details Text</label>
+                    <comment>This is the text to take your customer to the Cookie Policy page.</comment>
                 </field>
                 <field id="link" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>More Details Link of Text</label>
+                    <label>Cookie Page URL</label>
+                    <comment>You can use the Magento default page our a external page.</comment>
                 </field>
                 <field id="button" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Accept Button Text</label>
+                </field>
+            </group>
+            <group id="layout" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30" translate="label">
+                <label>Layout Configuration</label>
+                <field id="position" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position to be Displayed</label>
+                    <frontend_class>positions</frontend_class>
+                    <source_model>Magestat\CookieLawBanner\Model\Config\Source\BannerPosition</source_model>
+                </field>
+                <field id="default" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use Default Layout From Magento</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>This option allow you use the same font size and background color from Default magento Cookie Restriction banner.</comment>
                 </field>
             </group>
         </section>

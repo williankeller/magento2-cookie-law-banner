@@ -9,39 +9,112 @@
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
  */
 
+@banner-bg-color: #fff;
+@banner-box-shadow: -2px 2px 82px -26px rgba(0, 0, 0, .5);
+@corner-max-width: 400px;
+
+@full-content-size: 85%;
+@full-button-size: 15%;
+
+@side-spaces: 30px;
+@bottom-spaced: 50px;
+
 //
 //  Common (Both desktop and mobile)
 //  _____________________________________________
 
 & when (@media-common = true) {
     #magestat-cookie-law-banner {
-        background: #fff;
-        bottom: 50px;
-        box-shadow: -2px 2px 82px -26px rgba(0, 0, 0, .5);
-        left: 30px;
-        max-width: 400px;
+        background: @banner-bg-color;
+        box-shadow: @banner-box-shadow;
         overflow: hidden;
+        padding: 20px;
         position: fixed;
-        text-align: center;
-        z-index: 48;
-        .content-inner-container {
-            padding: 20px;
+        z-index: 999; // Forcing inxed to make sure it will be above all.
+
+        &.bottom-left,
+        &.bottom-right,
+        &.top-left,
+        &.top-right {
+            max-width: @corner-max-width;
+            text-align: center;
         }
+        &.bottom-left,
+        &.top-left {
+            left: @side-spaces;
+        }
+        &.bottom-right,
+        &.top-right {
+            right: @side-spaces;
+        }
+        &.bottom-full {
+            bottom: 0;
+        }
+        &.top-full {
+            top: 0;
+        }
+
+        &.bottom-left,
+        &.bottom-right {
+            bottom: @bottom-spaced;
+        }
+        &.top-left,
+        &.top-right {
+            top: @bottom-spaced;
+        }
+
+        &.bottom-full,
+        &.top-full {
+            left: 0;
+            padding: 10px 20px;
+            right: 0;
+            width: 100%;
+
+            .content-inner-container {
+                display: flex;
+                flex-direction: row;
+                .banner-content-data {
+                    width: @full-content-size;
+                }
+                .banner-title h3 {
+                    margin: 10px 0;
+                }
+            }
+
+            .banner-button {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                margin: 0;
+                width: @full-button-size;
+            }
+        }
+
+        &.default-style {
+            padding: 12px 20px 12px 25px;
+            display: block;
+            font-size: 1.3rem;
+            background: #ffee9c;
+            border-color: #d6ca8e;
+            color: #333;
+        }
+
         .banner-title {
             h3 {
                 margin: 20px 0;
                 text-transform: uppercase;
             }
         }
+
         .banner-content {
             p {
                 margin: 5px 0;
-                padding: 0 15px;
             }
             .link {
                 text-decoration: underline;
             }
         }
+
         .banner-button {
             margin: 20px 10px 5px;
             .button-accept {
@@ -62,5 +135,26 @@
         bottom: 15px;
         left: 15px;
         right: 15px;
+
+        &.position {
+            bottom: 15px;
+            left: 15px;
+            padding: 20px 20px;
+            right: 15px;
+            width: auto;
+
+            .content-inner-container {
+                display: block;
+                text-align: center;
+                .banner-content-data {
+                    width: 100%;
+                }
+                .banner-button {
+                    display: block;
+                    margin: 10px 0 0 0;
+                    width: 100%;
+                }
+            }
+        }
     }
 }

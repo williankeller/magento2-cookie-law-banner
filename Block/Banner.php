@@ -2,7 +2,6 @@
 
 /**
  * A Magento 2 module named Magestat/CookieLawBanner
- * Copyright (C) 2018 Magestat
  *
  * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
  *
@@ -64,21 +63,17 @@ class Banner extends \Magento\Framework\View\Element\Template
     /**
      * Retrieve banner title.
      *
-     * @return string
+     * @return null|string
      */
     public function getTitle()
     {
-        $title = $this->helperData->getTitle();
-        if (empty($title)) {
-            return false;
-        }
-        return $title;
+        return $this->helperData->getTitle();
     }
 
     /**
      * Retrieve banner message content.
      *
-     * @return string
+     * @return null|string
      */
     public function getMessage()
     {
@@ -88,29 +83,21 @@ class Banner extends \Magento\Framework\View\Element\Template
     /**
      * Retrieve banner more info text.
      *
-     * @return string
+     * @return null|string
      */
     public function getInfoMessage()
     {
-        $info = $this->helperData->getInfoMessage();
-        if (empty($info)) {
-            return false;
-        }
-        return $info;
+        return $this->helperData->getInfoMessage();
     }
 
     /**
      * Retrieve banner more info link to.
      *
-     * @return string
+     * @return null|string
      */
     public function getInfoLink()
     {
-        $link = $this->helperData->getInfoLink();
-        if (empty($link)) {
-            return false;
-        }
-        return $link;
+        return $this->helperData->getInfoLink();
     }
 
     /**
@@ -125,5 +112,41 @@ class Banner extends \Magento\Framework\View\Element\Template
             return __('Accept');
         }
         return $button;
+    }
+
+    /**
+     * Responsible to vuild the style classes together.
+     *
+     * @return string
+     */
+    public function getAdditionalStyle()
+    {
+        return $this->getPosition() . $this->getDefaultStyle();
+    }
+
+    /**
+     * Retrieve banner place position.
+     *
+     * @return string
+     */
+    private function getPosition()
+    {
+        $position = $this->helperData->getPosition();
+        if (empty($position)) {
+            return 'bottom-left';
+        }
+        return $position;
+    }
+
+    /**
+     * Return class to apply default style from Magento.
+     *
+     * @return string
+     */
+    private function getDefaultStyle()
+    {
+        if ($this->helperData->isDefaultStyle()) {
+            return ' default-style';
+        }
     }
 }
