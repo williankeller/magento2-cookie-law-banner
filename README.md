@@ -24,7 +24,9 @@ git clone git@github.com:magestat/magento2-cookie-law-banner.git app/code/Magest
 
 Run the following command in Magento 2 root folder:
 ```sh
-php bin/magento module:enable Magestat_CookieLawBanner --clear-static-content
+php bin/magento module:enable Magestat_CookieLawBanner
+```
+```sh
 php bin/magento setup:upgrade
 ```
 
