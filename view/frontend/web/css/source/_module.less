@@ -27,10 +27,15 @@
     #magestat-cookie-law-banner {
         background: @banner-bg-color;
         box-shadow: @banner-box-shadow;
+        display: none;
         overflow: hidden;
         padding: 20px;
         position: fixed;
-        z-index: 999; // Forcing inxed to make sure it will be above all.
+        z-index: 999; // Forcing index to make sure it will be above all.
+
+        &.display {
+            display: block;
+        }
 
         &.bottom-left,
         &.bottom-right,

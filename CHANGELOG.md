@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+### [1.0.5](https://github.com/magestat/magento2-cookie-law-banner/releases/tag/1.0.5) - 2019-06-20
+#### Fixed
+- Remove cookie handler from the model.
+- Improve way the banner is showing up and handled.
+
+#### Changed
+- Changed the cookie handler by the magento cookie handler.
+
 ### [1.0.4](https://github.com/magestat/magento2-cookie-law-banner/releases/tag/1.0.4) - 2019-05-17
 #### Added
 - Possibility to select banner position.

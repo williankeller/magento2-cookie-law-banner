@@ -14,7 +14,6 @@
  * @var \Magestat\CookieLawBanner\Block\Banner $block
  */
 ?>
-<?php if ($block->getIsEnabled()) : ?>
 <div id="magestat-cookie-law-banner"
      class="position <?= $block->escapeHtmlAttr($block->getAdditionalStyle()) ?>"
      data-bind="scope:'magestat-cookie-law-banner'">
@@ -50,4 +49,3 @@
     }
 }
 </script>
-<?php endif; ?>

@@ -1,6 +1,6 @@
 /**
  * A Magento 2 module named Magestat/CookieLawBanner
- * Copyright (C) 2018 Magestat
+ * Copyright (C) 2018-2019 Magestat
  *
  * This file included in Magestat/CookieLawBanner is licensed under OSL 3.0
  *
@@ -10,13 +10,13 @@
 define([
     'uiComponent',
     'jquery',
-    'jquery/jquery.cookie'
+    'mage/cookies'
 ], function (Component, $) {
     'use strict';
 
     return Component.extend({
         defaults: {
-            cookieName: 'm_cookie-law-banner',
+            cookieName: 'user_agreed_with_cookies',
             context: '#magestat-cookie-law-banner',
             button: '.button-accept'
         },
@@ -24,6 +24,7 @@ define([
         /** @inheritdoc */
         initialize: function () {
             this._super();
+            this.displayBanner();
             this.buttonClick();
         },
 
@@ -39,9 +40,21 @@ define([
                 // Add class to hide container.
                 $(this).closest(self.context).fadeOut(300);
                 // Set cookie as accepted.
-                $.cookie(self.cookieName, true);
+                $.mage.cookies.set(self.cookieName, true);
             });
             return self;
+        },
+
+        /**
+         * Responsible to show the banner up.
+         *
+         * @returns {exports}
+         */
+        displayBanner: function () {
+            if (!$.mage.cookies.get(this.cookieName)) {
+                $(this.context).addClass('display');
+            }
+            return this;
         }
     });
 });
