@@ -10,10 +10,10 @@
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
  */
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="content">
-            <block class="Magestat\CookieLawBanner\Block\Banner" name="magestat.cookie.law.banner" template="Magestat_CookieLawBanner::banner.phtml" cacheable="false">
+            <block class="Magestat\CookieLawBanner\Block\Banner" name="magestat.cookie.law.banner" template="Magestat_CookieLawBanner::banner.phtml">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
                         <item name="components" xsi:type="array">
