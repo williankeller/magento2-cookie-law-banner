@@ -11,53 +11,43 @@
 
 namespace Magestat\CookieLawBanner\Block;
 
+use Magento\Framework\View\Element\Template;
 use Magento\Catalog\Block\Product\Context;
 use Magestat\CookieLawBanner\Helper\Data;
-use Magestat\CookieLawBanner\Api\CookieHandlerInterface;
 
 /**
  * @package \Magestat\CookieLawBanner\Block
  */
-class Banner extends \Magento\Framework\View\Element\Template
+class Banner extends Template
 {
     /**
-     * @var \Magestat\CookieLawBanner\Helper\Data
+     * @var Data
      */
     private $helperData;
 
     /**
-     * @var \Magestat\CookieLawBanner\Api\CookieHandlerInterface
-     */
-    private $cookieHandler;
-
-    /**
      * @param Context $context
      * @param Data $helper
-     * @param CookieHandlerInterface $cookieHandler
      * @param array $data
      */
     public function __construct(
         Context $context,
         Data $helper,
-        CookieHandlerInterface $cookieHandler,
         array $data = []
     ) {
         parent::__construct($context, $data);
         $this->helperData = $helper;
-        $this->cookieHandler = $cookieHandler;
     }
 
     /**
-     * Get if module is enabled.
-     *
-     * @return bool
+     * @inheritDoc
      */
-    public function getIsEnabled()
+    protected function _toHtml()
     {
-        if ($this->helperData->isActive() && !$this->cookieHandler->exists()) {
-            return true;
+        if (!$this->helperData->isActive()) {
+            return '';
         }
-        return false;
+        return parent::_toHtml();
     }
 
     /**
