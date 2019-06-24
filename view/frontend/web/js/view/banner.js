@@ -18,7 +18,8 @@ define([
         defaults: {
             cookieName: 'user_agreed_with_cookies',
             context: '#magestat-cookie-law-banner',
-            button: '.button-accept'
+            button: '.button-accept',
+            expireTime: 12
         },
 
         /** @inheritdoc */
@@ -39,8 +40,12 @@ define([
             $(self.context).on('click', self.button, function () {
                 // Add class to hide container.
                 $(this).closest(self.context).fadeOut(300);
+
                 // Set cookie as accepted.
-                $.mage.cookies.set(self.cookieName, true);
+                var cookieExpires = new Date();
+                $.mage.cookies.set(self.cookieName, true, {
+                    expires: cookieExpires.setMonth(cookieExpires.getMonth() + self.expireTime)
+                });
             });
             return self;
         },
