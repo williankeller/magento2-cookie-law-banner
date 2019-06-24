@@ -19,7 +19,7 @@ define([
             cookieName: 'user_agreed_with_cookies',
             context: '#magestat-cookie-law-banner',
             button: '.button-accept',
-            expireTime: 12
+            cookieLifetime: 31556952 // 1 Year in seconds.
         },
 
         /** @inheritdoc */
@@ -42,9 +42,9 @@ define([
                 $(this).closest(self.context).fadeOut(300);
 
                 // Set cookie as accepted.
-                var cookieExpires = new Date();
+                var cookieExpires = new Date(new Date().getTime() + self.cookieLifetime * 1000);
                 $.mage.cookies.set(self.cookieName, true, {
-                    expires: cookieExpires.setMonth(cookieExpires.getMonth() + self.expireTime)
+                    expires: cookieExpires
                 });
             });
             return self;
