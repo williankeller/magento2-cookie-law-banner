@@ -40,11 +40,11 @@ php bin/magento cache:clean
 1. Go to **STORES** > **Configuration** > **MAGESTAT** > **Cookie Law Banner**:
 2. Under the **Enable Module** tab, select **Enabled** option to enable module.
 3. Under the **Content Management** tab, fill the fields as you want.
-3. Under the **Layout COnfiguration** tab, select the options that better fit to your store.
+3. Under the **Layout Configuration** tab, select the options that better fit to your store.
 
 ## Wiki
 
-For detailed documentation, please follow our [WIKI page](https://github.com/magestat/magento2-cookie-law-banner/wiki). There you can find images and examples.
+For detailed documentation, please follow our [WIKI Page](https://github.com/magestat/magento2-cookie-law-banner/wiki). There you can find images and examples.
 
 ## Contribution
 
