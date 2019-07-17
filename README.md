@@ -56,6 +56,6 @@ Want to contribute to this extension? The quickest way is to open a [pull reques
 
 If you encounter any problems or bugs, please open an issue on [GitHub](https://github.com/magestat/magento2-cookie-law-banner/issues).
 
-Need help setting up or want to customize this extension to meet your business needs? Please open an issue and if we like your idea we will add this feature for free or at a discounted rate.
+Need help setting up or want to customize this extension to meet your business needs? Please open an issue and if we like your idea we will add this feature for free.
 
 © Magestat.
