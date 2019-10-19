@@ -10,7 +10,7 @@
         "magento 2 cookie"
     ],
     "type": "magento2-module",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "support": {
         "issues": "https://github.com/magestat/magento2-cookie-law-banner/issues/"
     },
