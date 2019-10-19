@@ -14,7 +14,7 @@
         <tab id="magestat" translate="label" sortOrder="900">
             <label>Magestat</label>
         </tab>
-        <section id="magestat_cookielawbanner" showInDefault="1">
+        <section id="magestat_cookielawbanner" showInDefault="1" showInStore="1" showInWebsite="1">
             <tab>magestat</tab>
             <label>Cookie Law Banner</label>
             <resource>Magestat_CookieLawBanner::config</resource>
