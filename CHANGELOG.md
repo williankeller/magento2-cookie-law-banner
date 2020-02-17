@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+### [1.1.2](https://github.com/magestat/magento2-cookie-law-banner/releases/tag/1.1.2) - 2020-02-17
+#### Fixed
+- Add ACL for this module
+
 ### [1.1.1](https://github.com/magestat/magento2-cookie-law-banner/releases/tag/1.1.1) - 2019-10-19
 #### Fixed
 - Show section in website and store scopes
